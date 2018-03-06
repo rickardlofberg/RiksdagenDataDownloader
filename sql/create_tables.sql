@@ -1,3 +1,5 @@
+-- SQL code take from http://data.riksdagen.se/dokumentation/databasmodell/  
+
 CREATE TABLE dokument (
 hangar_id int,
 dok_id nvarchar(255),
