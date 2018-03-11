@@ -35,12 +35,30 @@ class SQL_Feeder:
                         yield SQL_query
                         # Empty the query
                         SQL_query = ''
+                        
+    def list_feed(self, list_of_sql_strings):
+        """ Reads a list of strings which are SQL-queries and yields them '
+        one at a time.
+        The only syntax checked is that single line comments are ignored
+        and checking for ; to see when SQL-query ends. """
+        # SQL query starts of as empty
+        SQL_query = ''
+        for line in list_of_sql_strings:
+                # Make sure it's not a commented line
+                if not self.is_comment(line):
+                    # Non-comments get's added to query
+                    SQL_query += line.strip()
 
+                    # If we are at the end of sql statement, yield
+                    if self.is_query_end(line):
+                        yield SQL_query
+                        # Empty the query
+                        SQL_query = ''
+                        
     def string_feed(self, sql_string):
         """ Reads a string with SQL-queries and yields them one at a time.
         The only syntax checked is that single line comments are ignored
         and checking for ; to see when SQL-query ends. """
-        pass
 
     def is_comment(self, string):
         """Returns True if string is a commented line in SQL-syntax (starts
