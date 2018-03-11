@@ -28,6 +28,14 @@ class RiksDatasetInterface:
             print("Something went wrong when retriving the dataset, make \
             sure the URL is correct.")
 
+    def available_formats(self):
+        """ Returns a list of all the available data formats """
+        formats = []
+        for dataset in self.xml_dict['datasetlista']['dataset']:
+            if dataset['format'] not in formats:
+                formats.append(dataset['format'])
+        return formats
+
     def get_all_dataset_uri(self, data_type='sql'):
         """ Yield all the URIs to all the available datasets of that type. """
         for dataset in self.xml_dict['datasetlista']['dataset']:
