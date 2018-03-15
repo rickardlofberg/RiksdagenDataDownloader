@@ -94,11 +94,9 @@ class RiksDatasetInterface:
         and the size of the dataset as a tuple. """
         for dataset in self.available_datasets(data_format):
             yield (self.base_url + dataset, self.dataset_info(dataset)['storlek'])
-    
-        for dataset in self.xml_dict['datasetlista']['dataset']:
-            if dataset['format'] == data_format:
-                yield (self.base_url + dataset['url'], dataset['storlek'])
-                
+
+    # These methods are repetative.
+    # It is meant this way to make the interface easier.
     def get_all_anforande_uri(self, data_format='sql'):
         """ Yield all the URIs for document type anforande. """
         for dataset in self.available_datasets(data_format):
@@ -122,6 +120,16 @@ class RiksDatasetInterface:
         for dataset in self.available_datasets(data_format):
             if self.dataset_info(dataset)['namn'] == 'votering':
                 yield self.base_url + dataset
+                
+    # These are methods to retrive the data.
+    def _get_zipfile(self, uri):
+        pass
 
-        
+    def _read_zipfiles(self, zipfile):
+        pass
+                
+    def save_to_database(self, x, y, z):
+        pass
 
+    def download_data(self, document_type, data_format):
+        pass
