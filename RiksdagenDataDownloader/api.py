@@ -10,7 +10,9 @@ rdd.download_to_database()
 
 
 def get_datasets():
-    pass
+    """ Returns a RiksDatasetInterface to explire the
+    avilable datasets """
+    return RiksDatasetInterface()
 
 def download_dataset():
     pass
