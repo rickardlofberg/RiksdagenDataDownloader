@@ -120,16 +120,3 @@ class RiksDatasetInterface:
         for dataset in self.available_datasets(data_format):
             if self.dataset_info(dataset)['namn'] == 'votering':
                 yield self.base_url + dataset
-                
-    # These are methods to retrive the data.
-    def _get_zipfile(self, uri):
-        pass
-
-    def _read_zipfiles(self, zipfile):
-        pass
-                
-    def save_to_database(self, x, y, z):
-        pass
-
-    def download_data(self, document_type, data_format):
-        pass
