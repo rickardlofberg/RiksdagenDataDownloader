@@ -37,8 +37,9 @@ def save_zip_content( request_content, directory='' ):
 
     # Read the Bytes into a ZipFile-Object
     zipdata = zipfile.ZipFile(io.BytesIO(request_content))
-        
+
     # There can be more than one file ...
     for file_name in zipdata.namelist():
+        #.os.path.join(dir_name, base_filename 
         # Extract the file
         zipdata.extract(file_name, path=directory)
