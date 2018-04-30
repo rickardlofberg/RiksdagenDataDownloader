@@ -95,6 +95,12 @@ class RiksDatasetInterface:
         for dataset in self.available_datasets(data_format):
             yield (self.base_url + dataset, self.dataset_info(dataset)['storlek'])
 
+    def get_document_uri(self, data_format='sql', datatype=''):
+        """ Yield all the URIs for document type anforande. """
+        for dataset in self.available_datasets(data_format):
+            if datatype == '' or self.dataset_info(dataset)['namn'] == datatype:
+                yield self.base_url + dataset            
+
     # These methods are repetative.
     # It is meant this way to make the interface easier.
     def get_all_anforande_uri(self, data_format='sql'):
@@ -120,3 +126,5 @@ class RiksDatasetInterface:
         for dataset in self.available_datasets(data_format):
             if self.dataset_info(dataset)['namn'] == 'votering':
                 yield self.base_url + dataset
+
+
