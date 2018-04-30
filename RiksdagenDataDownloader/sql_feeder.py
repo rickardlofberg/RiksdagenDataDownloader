@@ -1,5 +1,6 @@
 import sqlite3
 import os.path
+import re
 
 class SQL_Feeder:
     """Used to break down SQL code with many queries and feed one query
@@ -59,6 +60,9 @@ class SQL_Feeder:
         """ Reads a string with SQL-queries and yields them one at a time.
         The only syntax checked is that single line comments are ignored
         and checking for ; to see when SQL-query ends. """
+        for sql in re.findall(r'''INSERT.+?[)];''', sql_string, re.DOTALL):
+            sql = sql.replace('\n', '')
+            yield sql
 
     def is_comment(self, string):
         """Returns True if string is a commented line in SQL-syntax (starts
