@@ -12,10 +12,10 @@ from shutil import rmtree
 from setuptools import find_packages, setup, Command
 
 # Package meta-data.
-NAME = 'Riksdagen Data Downloader'
+NAME = 'RiksdagenDataDownloader'
 DESCRIPTION = 'A tool to download data from data.riksdagen.se'
-URL = 'https://github.com/rickardlofberg/myproject'
-EMAIL = 'rickard.lofberg@gmail.com'
+URL = 'https://github.com/rickardlofberg/RiksdagenDataDownloader'
+EMAIL = 'lofberg.rickard@gmail.com'
 AUTHOR = 'Rickard Lofberg'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = 0.5
@@ -74,7 +74,7 @@ class UploadCommand(Command):
 
     def run(self):
         try:
-            self.status('Removing previous builds…')
+            self.status('Removing previous builds')
             rmtree(os.path.join(here, 'dist'))
         except OSError:
             pass
