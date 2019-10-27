@@ -1,9 +1,8 @@
-Python code to download and save data from data.riksdagen.se to a local SQLite 
-DB.
+Python code to download and save data from data.riksdagen.se to disk or stream the output.
 
 TODO/Things to contribute with:
-- Add primary keys, foreign keys and indexing to sql database
-- Add functionality to ignore multirow comments to sql feeder
-- Add syntax checking to sql feeder
-- Make the RiksDatasetInterface smarter, is there a better way to do this?
-- ...
+- Improve tests
+- Check spelling
+- Update comments
+- Improve exception handeling
+- Add new features?
