@@ -1,0 +1,39 @@
+<datasetlista>
+  <dataset>
+    <namn>
+      anforande
+    </namn>
+    <typ>
+      anforande
+    </typ>
+    <samling>
+      anforande-201819
+    </samling>
+    <rm>
+      2018/19
+    </rm>
+    <filnamn>
+      anforande-201819.csv.zip
+    </filnamn>
+    <storlek>
+      54944
+    </storlek>
+    <format>
+      csv
+    </format>
+    <filformat>
+      zip
+    </filformat>
+    <uppdaterad>
+      2019-03-14 14:44:30
+    </uppdaterad>
+    <url>
+      /dataset/anforande/anforande-201819.csv.zip
+    </url>
+    <description>
+      Anföranden som ledamöter hållit i kammaren.
+    </description>
+    <beskrivning/>
+    <upplysning/>
+  </dataset>
+</datasetlista>
